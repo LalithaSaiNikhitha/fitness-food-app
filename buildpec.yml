@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo Installing dependencies
+      - aws --version  # Verifies AWS CLI version
+      - $(aws ecr get-login --no-include-email --region us-east-1)  # Logs into ECR using AWS CLI
+  build:
+    commands:
+      - echo Building Docker image
+      - docker build -t fitness-app .  # Builds Docker image with tag 'fitness-app'
+      - docker tag fitness-app:latest 257394466920.dkr.ecr.us-east-1.amazonaws.com/fitness-app:latest  # Tags image for ECR
+      - docker push 257394466920.dkr.ecr.us-east-1.amazonaws.com/fitness-app:latest  # Pushes the image to ECR
