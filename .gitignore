@@ -1,0 +1,31 @@
+# Python virtual environment
+myenv/
+
+# Bytecode and cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python_history
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Streamlit specific
+.streamlit/
+
+# IDE configurations (optional, remove if you don't use them)
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# MacOS specific
+.DS_Store
+
+# Node.js dependencies (if any)
+node_modules/
+
+#env
+.env
